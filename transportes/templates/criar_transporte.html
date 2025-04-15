@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static poll_extras_transportes %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/transporte-form.css' %}">
+{% endblock css %}
+{% block title %}
+Cadastro Transporte
+{% endblock title %}
+{% block content %}
+<form action="{% url 'criar_transporte' paciente_id %}" method="post" class="form_row" name="frmTransporte"
+    id="frmTransporte">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-5">
+            <h2>Cadastro de Transporte</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-5">
+            <label>Nome:</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-5">
+            <span class="sub-title-form">{{nome}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <label>Cartão-SUS:</label>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <span class="sub-title-form">{{cod_sus}}</span>
+        </div>
+    </div>
+
+    {% for field in form %}
+
+    <div class="row">
+        <div class="col-5 {{ field.errors|yesno:" error," }}">{{ field.label_tag }}</div>
+    </div>
+    <div class="row">
+        <div class="{{ field|set_column_input }}">{{ field }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-5 error">{{ field.errors }}</div>
+    </div>
+
+    {% endfor %}
+    <div class="row">
+        <div class="col-5">
+            <input type="submit" value="Confirmar">
+        </div>
+    </div>
+</form>
+<script src="{% static 'js/transporte-form.js' %}"></script>
+{% endblock content %}

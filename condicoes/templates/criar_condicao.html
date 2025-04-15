@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static poll_extras %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/condicao-form.css' %}">
+{% endblock css %}
+{% block title %}
+Cadastro Condicao
+{% endblock title %}
+{% block content %}
+<form action="{% url 'criar_condicao' paciente_id %}" method="post" class="form_row" name="frmCondicao"
+    id="frmCondicao">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-5">
+            <h2>Cadastro de Condicao</h2>
+        </div>
+    </div>
+    {% for field in form %}
+    {% if field.name|is_fieldset %}
+    <div class="row">
+        <fieldset>
+            <legend class="{{ field.errors|yesno:" error," }}">{{ field|set_label }}</legend>
+            {{ field }}
+        </fieldset>
+    </div>
+    {% else %}
+    <div class="row">
+        <div class="col-5 {{ field.errors|yesno:" error," }}">{{ field.label_tag }}</div>
+    </div>
+    <div class="row">
+        <div class="{{ field|set_column_input }}">{{ field }}</div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-5 error">{{ field.errors }}</div>
+    </div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-5">
+            <input type="submit" value="Confirmar">
+        </div>
+    </div>
+</form>
+<script src="{% static 'js/condicao-form.js' %}"></script>
+{% endblock content %}

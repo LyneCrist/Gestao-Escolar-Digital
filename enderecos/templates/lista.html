@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}
+    Lista Endereço
+{% endblock title %}
+{% block content %}
+    <form method="post" action="{% url 'enderecos' %}">
+        <h1>Lista de Endereços</h1>
+        {% csrf_token %}
+    </form>
+{% endblock content %}

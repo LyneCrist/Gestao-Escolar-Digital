@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}
+Cadastro Endereço
+{% endblock title %}
+{% block content %}
+<form method="post" action="{% url 'cadastro_endereco' %}">
+    <h1>Cadastro de Endereço</h1>
+    {% csrf_token %}
+    <button type="submit">Confirmar</button>
+</form>
+{% endblock content %}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cadastro</title>
+</head>
+<body>
+  
+   <fieldset>
+<h2>SOLICITAÇÃO DE TRANSPORTE SANITÁRIO</h2>
+     <h3>Complete o cadastro</h3>
+ </fieldset>
+  
+  <fieldset>
+    <form action="index.php" method="POST" enctype="multipart/form-data">
+      
+      <p>
+        <div>
+            <label for=""><b>Data de transporte</b></label>
+            <input type="date">
+            <label for=""><b>Horário de atendimento no local</b></label>
+            <input type="time">
+      <p>
+        </div>
+      
+        <div>
+                <label for=""><b>Motivo do transporte</b></label><br>
+
+                <label for="">Outros</label>
+                <input type="radio" name="consulta">
+
+                <label for="">Consulta</label>
+                <input type="radio">
+
+                <label for="">Retorno</label>
+                <input type="radio">
+
+                <Label>Quimioterapia</Label>
+                <input type="radio">
+
+                <label for="">Internação</label>
+                <input type="radio">
+
+                <label for="">Radioterapia</label>
+                <input type="radio"><br><br>
+
+                <label for="">Outros (Especificar):</label>
+                <input type="text" size="13">
+                <div><br><br>
+
+                    <div>
+                        <label for=""><b>Destino</b></label><br>
+                        <textarea name="" id="" cols="30" rows="1"></textarea>
+                    </div><br><br>
+
+                    <div>
+                        <label for=""><b>Cidade</b></label><br>
+                        <textarea name="" id="" cols="30" rows="1"></textarea>
+                    </div><br><br>
+
+                    <div>
+                        <label for=""><b>Condição de moradia</b></label><br>
+                        <label for="">Apartamento</label>
+                        <input type="radio" name="consulta">
+
+                        <label for="">Casa</label>
+                        <input type="radio"><br><br>
+
+                        <label for=""><b>Acesso</b></label><br>
+
+                        <label for="">Rampa</label>
+                        <input type="radio">
+
+                        <label for="">Escada</label>
+                        <input type="radio">
+
+                        <label for="">Piso plano</label>
+                        <input type="radio">
+                    </div><br><br>
+
+                    <div>
+                        <label for=""><b>Condição fisica</b></label><br>
+                        <label for="">Deambula</label>
+                        <input type="radio">
+
+                        <label for="">Não deambula</label>
+                        <input type="radio">
+
+                        <label for="">Acamado</label>
+                        <input type="radio">
+                        <br>
+                        <label for="">Cadeirante</label>
+                        <input type="radio">
+
+                        <label for="">Traqueostomizado</label>
+                        <input type="radio">
+
+                        <label for="">Uso de oxigênio Contínuo</label>
+                        <input type="radio">
+                        <br><br>
+                        <label for="">Portador de Mi (Especificar):</label><br>
+                        <input type="text" size="32">
+                    </div><br><br>
+
+                    <div>
+                        <label for=""><b>Necessidade de acompanhante:</b></label><br>
+                        
+                        <label for="">Não</label>
+                        <input type="radio">
+
+                        <label for="">Sim</label>
+                        <input type="radio"><br><br>
+
+                        <label for="">Qual?</label>
+                        <input type="text" size="25">
+                    </div><br><br>
+
+                    <div>
+                        <label for=""><b>Cuidado especial</b></label><br>
+                        <label for="">Sim</label>
+                        <input type="radio">
+
+                        <label for="">Não</label>
+                        <input type="radio"><br><br>
+
+                        <label for="">Qual?</label>
+                        <input type="text" size="25">
+                    </div><br><br>
+
+                    <div>
+                        <p>Eu, autorizo expressamente o transporte para a realização de exame e/ou consulta médica, residente no mesmo endereço supracitado. <br>
+                            Declaro estar ciente e de acordo com o uso de veículo fornecido pela instituição médica ou serviço de transporte designado para tal fim. <br>
+                            Assumo total responsabilidade pelos custos, se houver, relacionados a esse transporte.
+                            Além disso, autorizo a divulgação de informações <br> médicas necessárias para a prestação do serviço de transporte, garantindo o sigilo e a confidencialidade dos dados do paciente.</p>
+                    </div>
+
+                    <div>
+                        <label for=""><b>Eu concordo:</b></label>
+
+                        <label for="">Sim</label>
+                        <input type="radio">
+
+                        <label for="">Não</label>
+                        <input type="radio">
+                    </div><br><br>
+
+        <input type="reset"><br><p>
+        <input type="submit">
+      
+     </form>
+   </fieldset>
+  
+</body>
+</html>

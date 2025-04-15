@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            min-width: 15px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: arial;
+            font-size: 16px;
+
+        }
+
+        .form_row {
+            position: relative;
+            border-radius: 5px;
+            background-color: #f9fafc;
+            padding: 30px;
+        }
+
+        .form_row h2 {
+            text-align: center;
+        }
+
+        .form_row input:focus {
+            outline: none;
+        }
+
+        .form_row label {
+            font-size: 20px;
+        }
+
+        .form_row input {
+            box-shadow: 0 5px 25px 0 rgba(30, 30, 30, 0.15);
+            /* appearance: none; */
+            border-color: transparent;
+            font-size: 18px;
+        }
+
+        .form_row input::placeholder {
+            /* font-weight: bold; */
+            /* opacity: 0.5; */
+            opacity: 1.5;
+            color: #079c7e;
+        }
+
+        .form_row fieldset {
+            border: 2px solid black;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .form_row legend {
+            font-size: 20px;
+        }
+
+        .form_row input[type=text] {
+            color: #079c7e;
+            border-radius: 4px;
+            border: none;
+            width: 100%;
+            padding: 5px 20px;
+            /* margin: 8px 0; */
+            box-sizing: border-box;
+        }
+
+        .form_row input[type=number] {
+            color: #079c7e;
+            border-radius: 4px;
+            border: none;
+            width: 100%;
+            padding: 5px 20px;
+            /* margin: 8px 0; */
+            box-sizing: border-box;
+        }
+
+        .form_row input[type=date] {
+            color: #079c7e;
+            padding: 5px 20px;
+            border-radius: 4px;
+            border: none;
+            /* margin: 8px 0; */
+            box-sizing: border-box;
+        }
+
+        input[type='radio']:after {
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: #d1d3d1;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+        }
+
+        input[type='radio']:checked:after {
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: #079c7e;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+        }
+
+
+        .form_row input[type=submit] {
+            width: 100%;
+            background-color: #079c7e;
+            cursor: pointer;
+            padding: 13px 35px;
+            border-radius: 5px;
+            border: none;
+            color: white !important;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: 20px 0px 20px;
+        }
+
+        .row {
+            position: relative;
+            /* border: 1px red solid; */
+            margin: 6px 0 16px 0;
+        }
+
+        .col-1 {
+            width: 20%;
+            /* border: 1px black solid; */
+            margin: 1px 0 10px 0;
+        }
+
+        .col-2 {
+            /* border: 1px black solid; */
+            margin: 1px 0 10px 0;
+        }
+
+        .col-3 {
+            width: 60%;
+            /* border: 1px black solid; */
+            margin: 1px 0 10px 0;
+        }
+
+        .col-4 {
+            width: 80%;
+            /* border: 1px black solid; */
+            margin: 1px 0 10px 0;
+        }
+
+        .col-5 {
+            width: 100%;
+            /* border: 1px black solid; */
+            margin: 1px 0 10px 0;
+        }
+
+        @media screen and (min-width : 320px) {
+            .form_row {
+                width: 80%;
+            }
+
+            .col-1 {
+                width: 60%;
+            }
+
+            .col-2 {
+                width: 100%;
+            }
+
+        }
+
+        @media screen and (min-width : 414px) {
+
+            .container {
+                width: min-width !important;
+            }
+
+            .form_row {
+                width: 70%;
+            }
+
+            .col-1 {
+                width: 40%;
+            }
+
+            .col-2 {
+                width: 100%;
+            }
+
+        }
+
+
+        @media screen and (min-width : 1000px) {
+            .form_row {
+                width: 65%;
+            }
+
+            .col-1 {
+                width: 20%;
+            }
+
+            .col-2 {
+                width: 40%;
+            }
+
+        }
+
+        @media screen and (min-width : 1024px) {
+            .form_row {
+                width: 50%;
+            }
+
+            .col-1 {
+                width: 20%;
+            }
+
+            .col-2 {
+                width: 40%;
+            }
+
+        }
+
+        @media screen and (min-width : 1520px) {
+            .form_row {
+                width: 40%;
+            }
+
+            .col-1 {
+                width: 20%;
+            }
+
+            .col-2 {
+                width: 40%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" class="form_row" name="frmPaciente" id="frmPaciente">
+            <div class="row">
+                <div class="col-5">
+                    <h2>Cadastro de Paciente</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label for="nome">Nome</label>
+                </div>
+                <div class="col-5">
+                    <input type="text" name="nome" id="nome" autocomplete="off">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label for="dataNascimento">Data de Nascimento</label>
+                </div>
+                <div class="col-1">
+                    <input type="date" name="dataNascimento" id="dataNascimento">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    <fieldset>
+                        <legend>Gênero</legend>
+                        <input type="radio" id="homem" name="genero" value="1">
+                        <label for="homem">Masculino</label><br>
+                        <input type="radio" id="mulher" name="genero" value="2">
+                        <label for="mulher">Feminino</label><br>
+                        <input type="radio" id="outro" name="genero" value="3">
+                        <label for="outro">Outro</label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label for="sus">Cartão SUS</label>
+                </div>
+                <div class="col-3">
+                    <input type="number" name="cartaoSUS" id="cartaoSUS" placeholder="000000000000000"
+                        autocomplete="off">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    <fieldset>
+                        <legend>Agendamento Fixo</legend>
+                        <input type="radio" id="Sim" name="agendamentoFixo" value="1">
+                        <label for="Sim">Sim</label><br>
+                        <input type="radio" id="Não" name="agendamentoFixo" value="2" checked>
+                        <label for="Não">Não</label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label for="telefone">Telefone</label>
+                </div>
+                <div class="col-2">
+                    <input type="text" name="telefone" id="telefone" placeholder="+55(00) 00000-0000"
+                        autocomplete="off">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label for="rua">Rua</label>
+                </div>
+                <div class="col-5">
+                    <input type="text" name="rua" id="rua" autocomplete="off">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1">
+                    <label for="numero">Número</label>
+                </div>
+                <div class="col-1">
+                    <input type="number" name="numero" id="numero">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1">
+                    <label for="complemento">Complemento</label>
+                </div>
+                <div class="col-4">
+                    <input type="text" name="complemento" id="complemento" autocomplete="off">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    <label for="pontoReferencia">Ponto de Referência</label>
+                </div>
+                <div class="col-4">
+                    <input type="text" name="pontoReferencia" id="pontoReferencia" autocomplete="off">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">
+                    <input type="submit" value="Confirmar">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+<script>
+    "use strict";
+
+    const alpha = /[^A-Za-z\u00C0-\u00FF\s\b]/g;
+
+    const alphaNumeric = /[^A-Za-z0-9\u00C0-\u00FF._-\s\b]/g;
+
+    function maskPhone(text) {
+
+        const cleanText = text.replace(/\D/g, "");
+
+        const numbers = (cleanText.substring(0, 2) === "55") ? cleanText.substring(2, 13).split("") : cleanText.split("");
+
+        let formatted = `+55(${numbers.slice(0, 2).join("")})`;
+
+        if (numbers.length > 2)
+            formatted += ` ${numbers.slice(2, 7).join("")}`;
+
+        if (numbers.length > 7)
+            formatted += `-${numbers.slice(7, 13).join("")}`;
+
+        return formatted;
+    }
+
+    function replaceCharacter(text, regex) {
+        return text.replace(regex, "");
+    }
+
+    function maximumCharacters(text, size) {
+        return (text.length > size) ? text.slice(0, size) : text;
+    }
+
+    //  Immediately-Invoked Function Expression (IIFE)
+    ; (atlas => {
+
+        const name = atlas.document.getElementById("nome");
+
+        const phone = atlas.document.getElementById("telefone");
+
+        const card = atlas.document.getElementById("cartaoSUS");
+
+        const street = atlas.document.getElementById("rua");
+
+        const number = atlas.document.getElementById("numero");
+
+        const complement = atlas.document.getElementById("complemento")
+
+        const reference = atlas.document.getElementById("pontoReferencia")
+
+        name.focus();
+
+        name.addEventListener("input", event => {
+
+            event.target.value = atlas.maximum(event.target.value, 50);
+
+            event.target.value = atlas.replace(event.target.value, atlas.alpha);
+
+        });
+
+        phone.addEventListener("input", event => {
+
+            if (event.inputType === "insertText") {
+                event.target.value = atlas.mask(event.target.value)
+            }
+        });
+
+        card.addEventListener('input', event => event.target.value = atlas.maximum(event.target.value, 15));
+
+        street.addEventListener("input", event => {
+
+            event.target.value = atlas.maximum(event.target.value, 50);
+
+            event.target.value = atlas.replace(event.target.value, atlas.alphaNumeric);
+
+        });
+
+        number.addEventListener("input", event => event.target.value = atlas.maximum(event.target.value, 5));
+
+        complement.addEventListener("input", event => {
+
+            event.target.value = atlas.maximum(event.target.value, 40);
+
+            event.target.value = atlas.replace(event.target.value, atlas.alphaNumeric);
+
+        });
+
+        reference.addEventListener("input", event => {
+
+            event.target.value = atlas.maximum(event.target.value, 40);
+
+            event.target.value = atlas.replace(event.target.value, atlas.alphaNumeric);
+
+        });
+
+        atlas.window.addEventListener('beforeunload', event => {
+            console.log("Atlas sendo encerrado");
+        });
+
+    })({
+        document,
+        window,
+        "alpha": alpha,
+        "alphaNumeric": alphaNumeric,
+        "mask": maskPhone,
+        "replace": replaceCharacter,
+        "maximum": maximumCharacters
+    })
+
+</script>

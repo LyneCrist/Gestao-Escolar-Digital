@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static poll_extras_transportes %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
+{% endblock css %}
+
+{% block title %}
+Lista Transportes
+{% endblock title %}
+{% block content %}
+<form action="" method="get" class="form_row_list">
+
+    <div class="row">
+        <h3>{{ nome }}</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-5">
+            <table class="data-list-atlas">
+                <tr>
+                    <th>Data e Hora de Consulta</th>
+                    <th>Status</th>
+                    <th colspan="5"></th>
+                </tr>
+                {% for transporte in transportes %}
+                <tr>
+                    <td>{{ transporte.data_de_transporte }} - {{ transporte.horario_de_atendimento }}</td>
+                    <td>{{ transporte.status }}</td>
+                    <td class="td-align-center"">
+                                            <!-- <a href=" {% url 'editar_transporte' transporte.id %}">Editar</a> -->
+                        Editar
+                    </td>
+                    <td class="td-align-center"">
+                                            <!-- <a href=" {% url 'concelar_transporte' transporte.id %}">Cancelar</a>
+                        -->
+                        Cancelar
+                    </td>
+                    <td class="td-align-center"">
+                                            <!-- <a href=" {% url 'finalizar_transporte' transporte.id %}">
+                        Finalizar</a> -->
+                        Finalizar
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</form>
+{% endblock content %}

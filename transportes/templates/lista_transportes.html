@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static poll_extras_transportes %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
+{% endblock css %}
+
+{% block title %}
+Lista Transportes
+{% endblock title %}
+{% block content %}
+<form action="" method="get" class="form_row_list">
+
+    <div class="row">
+        <div class="col-5">
+            <h2>Relação de Transportes</h2>
+        </div>
+        <div class="col-5">
+            <table class="data-list-atlas">
+                <tr>
+                    <th>Paciente</th>
+                    <th>Data e Hora de Consulta</th>
+                    <th class="td-align-center">Status</th>
+                    <th colspan="5"></th>
+                </tr>
+                {% for transporte in transportes %}
+                <tr>
+                    <td>{{ transporte.nome }}</td>
+                    <td>{{ transporte.data|date:"d/m/Y" }} - {{ transporte.horario }} hrs</td>
+
+                    <td class="td-align-center {{ transporte.status|set_status }}">{{ transporte.status }}</td>
+
+                    {% if transporte.status not in 'Cancelado,Realizado' %}
+
+                    <td class="td-align-center">
+                        <a href=" {% url 'editar_transporte' transporte.id %}">Editar</a>
+                    </td>
+                    <td class="td-align-center"">
+                        <a href=" {% url 'cancelar_transporte' transporte.id %}">Cancelar</a>
+                    </td>
+                    <td class="td-align-center"">
+                        <a href=" {% url 'finalizar_transporte' transporte.id %}">Finalizar</a>
+                    </td>
+                    {% else %}
+                    <td colspan="3" class="td-align-center">&nbsp;</td>
+                    {% endif %}
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</form>
+{% endblock content %}

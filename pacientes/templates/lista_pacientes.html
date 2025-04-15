@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static poll_extras_pacientes %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
+{% endblock css %}
+
+{% block title %}
+Lista Pacientes
+{% endblock title %}
+{% block content %}
+<form action="" method="get" class="form_row_list">
+
+    <div class="row">
+
+        <div class="col-5">
+            <h2>Relação de Pacientes</h2>
+        </div>
+
+        <div class="row-left col-5">
+            <a class="button-link" href="{% url 'criar_paciente' %}">Criar paciente</a>
+        </div>
+
+        <div class="col-5">
+            <table class="data-list-atlas">
+                <tr>
+                    <th>Nome</th>
+                    <th>Cartão SUS</th>
+                    <th>Condições</th>
+                    <th>Transportes</th>
+                    <th colspan="6"></th>
+                </tr>
+                {% for paciente in pacientes %}
+                <tr>
+                    <td>{{ paciente.nome }}</td>
+                    <td>{{ paciente.cartao_sus }}</td>
+                    <td>
+                        <a href=" {% url 'editar_paciente' paciente.id %}">3</a>
+                    </td>
+                    <td>
+                        <a href=" {% url 'paciente_transportes' paciente.id %}">
+                            {{ paciente.total_transportes }}
+                        </a>
+                    </td>
+                    <td class="td-align-center"">
+                        <a href=" {% url 'editar_paciente' paciente.id %}">Editar</a>
+                    </td>
+                    <td class="td-align-center"">
+                        <a href=" {% url 'excluir_paciente' paciente.id %}">Excluir</a>
+                    </td>
+                    <td class="td-align-center"">
+                        <a href=" {% url 'criar_condicao' paciente.id %}">Inserir Condições</a>
+                    </td>
+                    <td class="td-align-center"">
+                        <a href=" {% url 'criar_transporte' paciente.id %}">Solicitar Transporte</a>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</form>
+{% endblock content %}

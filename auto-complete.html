@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="get">
+        <input type="hidden" name="csrfmiddlewaretoken"
+            value="yrqsWxNtbREiKWaVjKjZ6KFlcdE3ct80bkGMQgeRmd78Iw3c6ognSkteA5ULq0gc">
+    </form>
+</body>
+
+</html>
+
+<script>
+
+    ; (atlas => {
+
+        const csrToken = atlas.querySelector("[name=csrfmiddlewaretoken]")
+
+        console.info(`csrToken ${csrToken.value}`)
+
+    })(document)
+
+</script>
