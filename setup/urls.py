@@ -11,5 +11,5 @@ urlpatterns = [
     path("estudantes/", include("estudantes.urls")),
     # path("consultas/", include("consultas.urls")),
     # path("enderecos/", include("enderecos.urls")),
-    # path("auth/", include("usuarios.urls")),
+    path("auth/", include("usuarios.urls")),
 ]
