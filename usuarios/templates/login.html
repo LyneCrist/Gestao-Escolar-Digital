@@ -1,35 +1,115 @@
+{% load static %}
 <!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ===== Iconscout CSS ===== -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href= {% static 'css/login.css' %} />
+  <title>Login e Cadastro</title>
 </head>
 
 <body>
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        <div>
-            <label for="">Email</label>
-            <input type="text" name="email" id="email" placeholder="email@dominio.com" required="required"
-                pattern="^[0-9a-zA-Z-._+]+@[a-zA-Z0-9-_+]+\.[a-zA-Z]+(\.[a-zA-Z]+)?">
-            <span>(*)</span>
+  <div class="container">
+    <div class="forms">
+      <div class="form login">
+        <span class="title">Login</span>
+
+        <form action="#">
+          <div class="input-field">
+            <input type="text" id="email" placeholder="Coloque seu email" required="required" 
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
+            <i class="uil uil-envelope icon"></i>
+          </div>
+          <div class="input-field">
+            <input type="password" class="password" id="senha" placeholder="Coloque sua senha" required="required" />
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw"></i>
+          </div>
+
+          <div class="checkbox-text">
+            <div class="checkbox-content">
+              <input type="checkbox" id="logCheck" />
+              <label for="logCheck" class="text">Me lembre</label>
+            </div>
+
+            <a href="#" class="text">Esqueceu a senha?</a>
+          </div>
+
+          <div class="input-field button">
+            <input type="button" value="Login" />
+          </div>
+        </form>
+
+        <div class="login-signup">
+          <span class="text">Não é membro?
+            <a href="#" class="text signup-link">Cadastre-se</a>
+          </span>
         </div>
-        <div>
-            <label for="">Senha</label>
-            <input type="password" name="senha" id="senha" placeholder="Senha" required="required">
-            <span>(*)</span>
+      </div>
+
+      <!-- Registration Form -->
+      <div class="form signup">
+        <span class="title">Cadastro</span>
+
+        <form action="#">
+
+          <div class="input-field">
+            <input type="text" placeholder="Coloque seu nome" required />
+            <i class="uil uil-user"></i>
+          </div>
+          <div class="input-field">
+            <input type="text" placeholder="Coloque seu email" required />
+            <i class="uil uil-envelope icon"></i>
+          </div>
+          <div class="input-field">
+            <input type="password" class="password" placeholder="Crie sua senha" required />
+            <i class="uil uil-lock icon"></i>
+          </div>
+          <div class="input-field">
+            <input type="password" class="password" placeholder="Confirme sua senha" required />
+            <i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw"></i>
+          </div>
+
+
+          <label class="text">Tipo de Usuário:</label>
+          <div class="radio-group">
+            <input type="radio" id="pais" name="userType" value="pais" required />
+            <label for="pais" class="text">Pais</label>
+              
+            <input type="radio" id="professor" name="userType" value="professor" required />
+            <label for="professor" class="text">Professor</label>
+          </div>
+
+
+          <div class="checkbox-text">
+            <div class="checkbox-content">
+              <input type="checkbox" id="termCon" />
+              <label for="termCon" class="text">Aceite os termos</label>
+            </div>
+          </div>
+
+          <div class="input-field button">
+            <input type="button" value="Cadastre" />
+          </div>
+        </form>
+
+        <div class="login-signup">
+          <span class="text">Já é membro?
+            <a href="#" class="text login-link">Faça seu login</a>
+          </span>
         </div>
-        <button type="submit">Login</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember">
-            Remember me
-        </label>
-        <div>
-            <button type="button">Cancel</button>
-            <span>Forgot <a href="#">password?</a></span>
-        </div>
-    </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'js/login.js' %}"></script>
 </body>
+
 </html>
