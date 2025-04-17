@@ -1,14 +1,14 @@
 .form_row_list {
-    position: relative;
-    border-radius: 5px;
-    background-color: #f9fafc;
-    padding: 30px;
-    width: 80%;
+  position: relative;
+  border-radius: 5px;
+  background-color: #f9fafc;
+  padding: 30px;
+  width: 80%;
 }
 
 .form_row_list h2 {
-    color: #333;
-    text-align: center;
+  color: #333;
+  text-align: center;
 }
 
 /* .form_row_list .row {
@@ -17,71 +17,70 @@
 } */
 
 .form_row_list .row-left {
-    display: flex;
-    justify-content: right;
-    align-items: center;
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }
 
 a.button-link {
-    background-color: #079c7e;
-    cursor: pointer;
-    padding: 13px 35px;
-    border-radius: 5px;
-    color: white !important;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-decoration: none;
+  background-color: #079c7e;
+  cursor: pointer;
+  padding: 13px 35px;
+  border-radius: 5px;
+  color: white !important;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-
 .data-list-atlas {
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 18px;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 18px;
 }
 
 .data-list-atlas td,
 .data-list-atlas th {
-    border: 1px solid #ddd;
-    padding: 8px;
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
 .data-list-atlas tr:nth-child(even) {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 .data-list-atlas tr:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 .data-list-atlas th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #04AA6D;
-    color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
 }
 
 .data-list-atlas .td-align-center {
-    text-align: center;
-    color: white;
+  text-align: center;
+  color: white;
 }
 
 .td-align-center.status-cancelado {
-    background-color: red;
+  background-color: red;
 }
 
 .td-align-center.status-agendado {
-    background-color: #24ac54;
+  background-color: #24ac54;
 }
 
 .td-align-center.status-finalizado {
-    background-color: #0234d2;
+  background-color: #0234d2;
 }
 
 .td-align-center.disable_button {
-    color: silver;
-    opacity: 0.9;
-    pointer-events: none
+  color: silver;
+  opacity: 0.9;
+  pointer-events: none;
 }
