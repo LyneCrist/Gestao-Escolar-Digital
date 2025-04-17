@@ -1,3 +1,13 @@
+/* ===== Google Font Import - Poformsins ===== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 100;
+  padding: 100;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 .form_row_list {
   position: relative;
   border-radius: 5px;
@@ -7,12 +17,13 @@
 }
 
 body {
-  background-color: #131315; /* Cor do fundo da página */
-  color: white;
+  background-color: #000000; /* Cor do fundo da página */
+  color: #999999; /* Cor do texto padrão */
+  font-family: Arial, sans-serif; /* Fonte padrão */
 }
 
 .form_row_list h2 {
-  {% comment %} color: #050505; {% endcomment %}
+  color: rgb(255, 255, 253);
   text-align: center;
 }
 
@@ -28,7 +39,7 @@ body {
 }
 
 a.button-link {
-  background-color: #079c7e;
+  background-color: #4070f4;
   cursor: pointer;
   padding: 13px 35px;
   border-radius: 5px;
@@ -63,7 +74,7 @@ a.button-link {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04aa6d;
+  background-color: #4070f4;
   color: white;
 }
 
@@ -77,7 +88,7 @@ a.button-link {
 }
 
 .td-align-center.status-agendado {
-  background-color: #24ac54;
+  background-color: #4070f4;
 }
 
 .td-align-center.status-finalizado {
