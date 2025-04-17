@@ -130,9 +130,9 @@ class EstudanteForm(forms.ModelForm, CommonsUtil):
 
         if ad:
 
-            if len(ad) != 15:
+            if len(ad) != 11:
                 errors["cartao_sus"] = (
-                    "Campo cartão SUS deve possuir um tamanho de 15 dígitos"
+                    "Campo cartão SUS deve possuir um tamanho de 11 dígitos"
                 )
 
             elif not self.is_numeric_pattern(ad):

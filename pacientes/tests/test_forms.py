@@ -28,8 +28,8 @@ class PacienteFormTestCase(TestCase, CommonsUtil):
 
         self.assertEqual(
             len(self.paciente_ok["cartao_sus"]),
-            15,
-            "Campo deve possuir um tamanho de 15 dígitos",
+            11,
+            "Campo deve possuir um tamanho de 11 dígitos",
         )
 
     def test_acerto_verifica_formato_de_campo_cartao_sus(self):

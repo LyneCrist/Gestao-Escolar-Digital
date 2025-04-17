@@ -1,51 +1,43 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<meta name="description" content="">
-<meta name="keywords" content="">
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %}
-        Master
-        {% endblock title %}
-    </title>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
-    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Master {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/list.css' %}" />
 
-    {% block css %}
-    {% endblock %}
+    {% block css %} {% endblock %}
 
     <script src="{% static 'js/util.js' %}"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <form method="post" class="navbar-right">
-        {% csrf_token %}
-        <ul class="horizontal">
-            <li>
-                <a href="{% url 'listar_transportes' %}" class="active">Transportes</a>
-            </li>
-            <li>
-                <a href="{% url 'listar_pacientes' %}">Pacientes</a>
-            </li>
-        </ul>
+      {% csrf_token %}
+      <ul class="horizontal">
+        <li>
+          <a href="{% url 'listar_transportes' %}" class="active"
+            >Professores</a
+          >
+        </li>
+        <li>
+          <a href="{% url 'listar_pacientes' %}">Responsáveis</a>
+        </li>
+      </ul>
     </form>
 
     {% for message in messages %}
     <div class="row-alert {{ message.tags }}">
-        <strong>{{ message }}</strong>
+      <strong>{{ message }}</strong>
     </div>
-    {% endfor %}
-
-    {% comment %} <img src="{% static 'img/image.png' %}" alt=""> {% endcomment %}
-    <div class="container">
-        {% block content %}
-        {% endblock content %}
-    </div>
-</body>
-
+    {% endfor %} {% comment %}
+    <img src="{% static 'img/image.png' %}" alt="" /> {% endcomment %}
+    <div class="container">{% block content %} {% endblock content %}</div>
+  </body>
 </html>

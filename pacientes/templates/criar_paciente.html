@@ -4,14 +4,14 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/patient-form.css' %}">
 {% endblock css %}
 {% block title %}
-Cadastro Paciente
+Cadastro Aluno
 {% endblock title %}
 {% block content %}
 <form action="{% url 'criar_paciente' %}" method="post" class="form_row" name="frmPaciente" id="frmPaciente">
     {% csrf_token %}
     <div class="row">
         <div class="col-5">
-            <h2>Cadastro de Paciente</h2>
+            <h2>Cadastro do Aluno</h2>
         </div>
     </div>
     {% for field in form %}

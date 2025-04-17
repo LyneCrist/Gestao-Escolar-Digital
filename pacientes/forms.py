@@ -62,13 +62,13 @@ class PacienteForm(forms.ModelForm, CommonsUtil):
     )
 
     cartao_sus = forms.CharField(
-        label="Cartão SUS",
-        max_length=15,
+        label="Cartão RA",
+        max_length=11,
         required=False,
         widget=forms.TextInput(
             attrs={
-                "name": "cartaoSUS",
-                "id": "cartaoSUS",
+                "name": "cartaoRA",
+                "id": "cartaoRA",
                 "placeholder": "000000000000000",
                 "autocomplete": "off",
             }
@@ -212,9 +212,9 @@ class PacienteForm(forms.ModelForm, CommonsUtil):
 
         if cartao_sus:
 
-            if len(cartao_sus) != 15:
+            if len(cartao_sus) != 11:
                 errors["cartao_sus"] = (
-                    "Campo cartão SUS deve possuir um tamanho de 15 dígitos"
+                    "Campo cartão SUS deve possuir um tamanho de 11 dígitos"
                 )
 
             elif not self.is_numeric_pattern(cartao_sus):
@@ -231,10 +231,10 @@ class PacienteForm(forms.ModelForm, CommonsUtil):
                         .exists()
                     ):
                         errors["cartao_sus"] = (
-                            "Já existe um mesmo Cartão SUS cadastrado"
+                            "Já existe um mesmo Cartão RA cadastrado"
                         )
                 elif Paciente.objects.filter(cartao_sus=cartao_sus).exists():
-                    errors["cartao_sus"] = "Já existe um mesmo Cartão SUS cadastrado"
+                    errors["cartao_sus"] = "Já existe um mesmo Cartão RA cadastrado"
 
         if not agendamento_fixo:
             errors["agendamento_fixo"] = "Selecione uma opção para agendamento fixo"

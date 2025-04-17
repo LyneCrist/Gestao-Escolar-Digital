@@ -1,28 +1,30 @@
-{% extends "base.html" %}
-{% load static poll_extras_transportes %}
-{% block css %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
-{% endblock css %}
-
-{% block title %}
-Excluir Transporte
-{% endblock title %}
-{% block content %}
-<form action="{% url 'cancelar_transporte' id %}" method="post" class="form" style="position: relative;top:100px">
-    {% csrf_token %}
-    <div class="row">
-        <div class="col-5">
-            <h2>Você tem certeza que deseja cancelar este transporte ?</h2>
-        </div>
+{% extends "base.html" %} {% load static poll_extras_transportes %} {% block css
+%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}" />
+{% endblock css %} {% block title %} Excluir Transporte {% endblock title %} {%
+block content %}
+<form
+  action="{% url 'cancelar_transporte' id %}"
+  method="post"
+  class="form"
+  style="position: relative; top: 100px"
+>
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-5">
+      <h2>Você tem certeza que deseja cancelar este transporte ?</h2>
     </div>
-    <div class="row row-center">
-        <div class="col-5">
-            Após o cancelamento não será possível recuperar este registro
-        </div>
-        <div class="col-5">
-            <a href="{% url 'listar_transportes' %}" class="form button button-cancel">Não</a>
-            <input type="submit" class="form button button-confirm" value="Sim">
-        </div>
+  </div>
+  <div class="row row-center">
+    <div class="col-5">
+      Após o cancelamento não será possível recuperar este registro
     </div>
+    <div class="col-5">
+      <a href="{% url 'listar_transportes' %}" class="form button button-cancel"
+        >Não</a
+      >
+      <input type="submit" class="form button button-confirm" value="Sim" />
+    </div>
+  </div>
 </form>
 {% endblock content %}
