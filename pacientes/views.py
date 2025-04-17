@@ -9,6 +9,10 @@ from django.db.models import Count
 
 
 def listar(request):
+    if not request.user.is_authenticated:
+        return redirect('login')  # Garante que só usuários logados acessem
+    # Sua lógica da view aqui
+    return render(request, 'listar_pacientes.html')
 
     context = {}
 
@@ -16,10 +20,14 @@ def listar(request):
         total_transportes=Count("transporte")
     ).order_by("-data_criacao")
 
-    return render(request, "lista_pacientes.html", context)
+    return render(request, "listar_pacientes.html", context)
 
 
 def cadastrar(request):
+    if not request.user.is_authenticated:
+        return redirect('login')  # Garante que só usuários logados acessem
+    # Sua lógica da view aqui
+    return render(request, 'listar_pacientes.html')
 
     context = {}
 
@@ -57,6 +65,10 @@ def cadastrar(request):
 
 
 def atualizar(request, id: int):
+    if not request.user.is_authenticated:
+        return redirect('login')  # Garante que só usuários logados acessem
+    # Sua lógica da view aqui
+    return render(request, 'listar_pacientes.html')
 
     context = {}
 
@@ -84,6 +96,10 @@ def atualizar(request, id: int):
 
 
 def excluir(request, id: int):
+    if not request.user.is_authenticated:
+        return redirect('login')  # Garante que só usuários logados acessem
+    # Sua lógica da view aqui
+    return render(request, 'listar_pacientes.html')
 
     # if request.method == "POST":
 

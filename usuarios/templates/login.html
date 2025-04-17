@@ -1,3 +1,11 @@
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
 {% load static %}
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
@@ -10,7 +18,7 @@
   <!-- ===== Iconscout CSS ===== -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
   <!-- ===== CSS ===== -->
-  <link rel="stylesheet" href= {% static 'css/login.css' %} />
+  <link rel="stylesheet" href= "{% static 'css/login.css' %}" />
   <title>Login e Cadastro</title>
 </head>
 
@@ -20,7 +28,8 @@
       <div class="form login">
         <span class="title">Login</span>
 
-        <form action="#">
+        <form method="POST" action="{% url 'login' %}">
+          {% csrf_token %}
           <div class="input-field">
             <input type="text" id="email" placeholder="Coloque seu email" required="required" 
               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
@@ -42,7 +51,7 @@
           </div>
 
           <div class="input-field button">
-            <input type="button" value="Login" />
+            <input type="submit" value="Login" />
           </div>
         </form>
 
@@ -57,22 +66,42 @@
       <div class="form signup">
         <span class="title">Cadastro</span>
 
-        <form action="#">
+        <form method="POST" action="{% url 'signup' %}" novalidate>
+          {% csrf_token %}
 
           <div class="input-field">
-            <input type="text" placeholder="Coloque seu nome" required />
+            {{ form.username }}
+            <input type="text" name="username" id="id_username" placeholder="Coloque seu nome" required />
             <i class="uil uil-user"></i>
+            <small id="username-error" class="text-danger"></small>
           </div>
+
+          <script>
+            fetch("{% url 'check_username' %}?username=" + this.value)
+            document.getElementById('id_username').addEventListener('blur', function() {
+                fetch('/auth/check_username/?username=' + this.value)
+                    .then(response => response.json())
+                    .then(data => {
+                        const errorElement = document.getElementById('username-error');
+                        errorElement.textContent = data.exists ? 'Este nome de usuário já está em uso' : '';
+                    });
+            });
+            </script>
+
           <div class="input-field">
-            <input type="text" placeholder="Coloque seu email" required />
+            {{ form.email }}
+            <input type="text" name="email" placeholder="Coloque seu email" required />
             <i class="uil uil-envelope icon"></i>
           </div>
           <div class="input-field">
-            <input type="password" class="password" placeholder="Crie sua senha" required />
+            {{ form.password1 }}
+            <input type="password" name="password1" class="password" placeholder="Crie uma senha (mínimo 8 caracteres)" required />
             <i class="uil uil-lock icon"></i>
+            <small class="form-text">Use letras, números e símbolos</small>
           </div>
           <div class="input-field">
-            <input type="password" class="password" placeholder="Confirme sua senha" required />
+            {{ form.password2 }}
+            <input type="password" name="password2" class="password" placeholder="Confirme sua senha" required />
             <i class="uil uil-lock icon"></i>
             <i class="uil uil-eye-slash showHidePw"></i>
           </div>
@@ -80,25 +109,43 @@
 
           <label class="text">Tipo de Usuário:</label>
           <div class="radio-group">
-            <input type="radio" id="pais" name="userType" value="pais" required />
+            {{ form.tipo_usuario }}
+            <input type="radio" id="pais" name="tipo_usuario" value="pais" required />
             <label for="pais" class="text">Pais</label>
               
-            <input type="radio" id="professor" name="userType" value="professor" required />
+            <input type="radio" id="professor" name="tipo_usuario" value="professor" required />
             <label for="professor" class="text">Professor</label>
           </div>
 
 
           <div class="checkbox-text">
             <div class="checkbox-content">
-              <input type="checkbox" id="termCon" />
+              {{ form.terms_accepted }}
+              <input type="checkbox" id="termCon" name="terms_accepted" required />
               <label for="termCon" class="text">Aceite os termos</label>
             </div>
           </div>
 
           <div class="input-field button">
-            <input type="button" value="Cadastre" />
+            <input type="submit" value="Cadastre" />
           </div>
         </form>
+
+        <!-- Adicione para debug -->
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            {% for field, errors in form.errors.items %}
+                {% if field == 'password2' %}
+                    <strong>Erro na senha:</strong>
+                    <ul>
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
 
         <div class="login-signup">
           <span class="text">Já é membro?
