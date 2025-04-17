@@ -19,16 +19,16 @@ class TransporteCore:
 
         hora = data_atual.time().hour
 
-        if duration.days < 1:
+        # if duration.days < 1:
 
-            raise errors.CancelarTransporteError(
-                "Ação não permitida, período limite excedito para o cancelamento",
-                "O LIMITE PARA CANCELAMENTO É PERMITIDO ATÉ COM 1 DIA DE ANTECEDÊNCIA",
-            )
+        #     raise errors.CancelarTransporteError(
+        #         "Ação não permitida, período limite excedito para o cancelamento",
+        #         "O LIMITE PARA CANCELAMENTO É PERMITIDO ATÉ COM 1 DIA DE ANTECEDÊNCIA",
+        #     )
 
-        elif duration.days == 1 and hora >= 18:
+        # elif duration.days == 1 and hora >= 18:
 
-            raise errors.CancelarTransporteError(
-                "Ação não permitida, limite de horário excedido",
-                "O CANCELAMENTO PARA ATÉ 1 DIA DE ANTECENDÊNCIA É PERMITIDO ATÉ ÀS 18HRS",
-            )
+        #     raise errors.CancelarTransporteError(
+        #         "Ação não permitida, limite de horário excedido",
+        #         "O CANCELAMENTO PARA ATÉ 1 DIA DE ANTECENDÊNCIA É PERMITIDO ATÉ ÀS 18HRS",
+        #     )

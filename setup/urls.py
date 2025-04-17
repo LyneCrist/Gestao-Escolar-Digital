@@ -1,10 +1,10 @@
 from django.contrib import admin
-from django.views.generic import RedirectView
+from django.views.generic.base import RedirectView
 from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", RedirectView.as_view(url="/pacientes/", permanent=True)),
+    path("", RedirectView.as_view(url="/pacientes", permanent=True)),
     path("transportes/", include("transportes.urls")),
     path("pacientes/", include("pacientes.urls")),
     path("condicoes/", include("condicoes.urls")),
