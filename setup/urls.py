@@ -4,7 +4,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", RedirectView.as_view(url="/auth/login/", permanent=True)),
+    path("", RedirectView.as_view(url="/pacientes/", permanent=True)),
     path("transportes/", include("transportes.urls")),
     path("pacientes/", include("pacientes.urls")),
     path("condicoes/", include("condicoes.urls")),

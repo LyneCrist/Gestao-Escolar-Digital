@@ -137,7 +137,7 @@ def cancelar(request, id):
 
         if request.method == "GET":
 
-            return render(request, "cancelar_transporte.html", {"id": transporte.pk})
+            return render(request, "cancelar_transporte.html", {"id": id})
 
         TransporteCore().validar_cancelamento(
             datetime.combine(

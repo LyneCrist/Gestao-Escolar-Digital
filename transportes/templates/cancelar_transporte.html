@@ -1,8 +1,7 @@
-{% extends "base.html" %} {% load static poll_extras_transportes %} {% block css
-%}
+{% extends "base.html" %} {% load static poll_extras_transportes %} {% block css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}" />
-{% endblock css %} {% block title %} Excluir Transporte {% endblock title %} {%
-block content %}
+{% endblock css %} {% block title %} Excluir Transporte {% endblock title %} 
+{% block content %}
 <form
   action="{% url 'cancelar_transporte' id %}"
   method="post"
