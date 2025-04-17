@@ -1,13 +1,13 @@
 .form_row_list {
   position: relative;
   border-radius: 5px;
-  background-color: #f9fafc;
+  background-color:rgb(0, 0, 0);
   padding: 30px;
   width: 80%;
 }
 
 .form_row_list h2 {
-  color: #333;
+  {% comment %} color: #050505; {% endcomment %}
   text-align: center;
 }
 
