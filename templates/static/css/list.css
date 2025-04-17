@@ -1,9 +1,14 @@
 .form_row_list {
   position: relative;
   border-radius: 5px;
-  background-color:rgb(0, 0, 0);
+  background-color: #131315;
   padding: 30px;
   width: 80%;
+}
+
+body {
+  background-color: #131315; /* Cor do fundo da página */
+  color: white;
 }
 
 .form_row_list h2 {
