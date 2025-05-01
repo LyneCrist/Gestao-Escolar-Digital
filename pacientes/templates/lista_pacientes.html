@@ -25,22 +25,15 @@ Lista Pacientes
                 <tr>
                     <th>Nome</th>
                     <th>RA</th>
-                    <th>Condições</th>
-                    {% comment %} <th>Transportes</th> {% endcomment %}
-                    <th colspan="6"></th>
+                    <th colspan="5">Ações</th> 
                 </tr>
+                
                 {% for paciente in pacientes %}
                 <tr>
                     <td>{{ paciente.nome }}</td>
-                    <td>{{ paciente.cartao_sus }}</td>
-                    <td>
-                        <a href=" {% url 'editar_paciente' paciente.id %}">3</a>
+                    <td>{{ paciente.cartao_sus }}
                     </td>
-                    <td>
-                        <a href=" {% url 'paciente_transportes' paciente.id %}">
-                            {{ paciente.total_transportes }}
-                        </a>
-                    </td>
+                 
                     <td class="td-align-center"">
                         <a href=" {% url 'editar_paciente' paciente.id %}">Editar</a>
                     </td>
