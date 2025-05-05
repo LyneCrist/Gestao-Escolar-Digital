@@ -25,29 +25,31 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("data_de_transporte", models.DateField()),
-                (
-                    "motivo_de_transporte",
-                    models.IntegerField(
-                        choices=[
-                            (1, "Retorno"),
-                            (2, "Exames"),
-                            (3, "Quimioterapia"),
-                            (4, "Internação"),
-                            (5, "Procedimento"),
-                            (6, "Radioterapia"),
-                            (7, "Primeira-Consulta"),
-                            (8, "Outros"),
-                        ]
-                    ),
-                ),
+                # ("data_de_transporte", models.DateField()),
+                # (
+                #     "motivo_de_transporte",
+                #     models.IntegerField(
+                #         choices=[
+                #             (1, "Retorno"),
+                #             (2, "Exames"),
+                #             (3, "Quimioterapia"),
+                #             (4, "Internação"),
+                #             (5, "Procedimento"),
+                #             (6, "Radioterapia"),
+                #             (7, "Primeira-Consulta"),
+                #             (8, "Outros"),
+                #         ]
+                #     ),
+                # ),
+                ("nota", models.FloatField(null=True, blank=True)),
+                ("materia", models.CharField(max_length=60)),
                 ("descricao_motivo", models.CharField(max_length=60, null=True)),
-                ("horario_de_atendimento", models.TimeField()),
-                ("rua", models.CharField(max_length=60)),
-                ("bairro", models.CharField(max_length=60)),
-                ("numero", models.CharField(max_length=7)),
-                ("cidade", models.CharField(max_length=60)),
-                ("destino", models.CharField(max_length=60)),
+                # ("horario_de_atendimento", models.TimeField()),
+                # ("rua", models.CharField(max_length=60)),
+                # ("bairro", models.CharField(max_length=60)),
+                # ("numero", models.CharField(max_length=7)),
+                # ("cidade", models.CharField(max_length=60)),
+                # ("destino", models.CharField(max_length=60)),
                 ("observação", models.CharField(max_length=60)),
                 (
                     "status",

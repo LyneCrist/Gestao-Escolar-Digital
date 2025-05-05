@@ -69,8 +69,13 @@ def atualizar(request, id: int):
         if context["form"].is_valid():
 
             context["form"].save()
+            messages.success(request, "Condição atualizada com sucesso!")
 
-            return redirect("editar_condicao", condicao.pk)
+            return redirect("lista_condicoes", condicao.pk)
+        
+        else:
+            context["form"] = CondicaoForm(instance=condicao)
+        return render(request, "condicoes/editar.html", context)
 
         context["erros"] = context["form"].errors.as_data()
 

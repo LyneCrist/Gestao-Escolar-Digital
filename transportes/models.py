@@ -7,23 +7,27 @@ class Transporte(models.Model):
 
     paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
 
-    data_de_transporte = models.DateField()
+    # data_de_transporte = models.DateField()
 
-    horario_de_atendimento = models.TimeField()
+    # horario_de_atendimento = models.TimeField()
 
-    motivo_de_transporte = models.IntegerField(choices=MOTIVO_CHOICES)
+    # motivo_de_transporte = models.IntegerField(choices=MOTIVO_CHOICES)
 
-    descricao_motivo = models.CharField(max_length=60, null=True)
+    nota = models.FloatField(null=True, blank=True)
 
-    rua = models.CharField(max_length=60)
+    descricao_motivo = models.CharField(max_length=60)
 
-    bairro = models.CharField(max_length=60)
+    # rua = models.CharField(max_length=60)
 
-    numero = models.CharField(max_length=7)
+    # bairro = models.CharField(max_length=60)
 
-    cidade = models.CharField(max_length=60)
+    # numero = models.CharField(max_length=7)
 
-    destino = models.CharField(max_length=60)
+    # cidade = models.CharField(max_length=60)
+
+    # destino = models.CharField(max_length=60)
+    
+    materia = models.CharField(max_length=60)
 
     observacao = models.CharField(max_length=60)
 
