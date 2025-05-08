@@ -35,6 +35,14 @@ Cadastro Transporte
             <span class="sub-title-form">{{cod_sus}}</span>
         </div>
     </div>
+    <div class="row">
+        <label>Data de Nascimento:</label>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <span class="sub-title-form">{{nascimento}}</span>
+        </div>
+    </div>
 
     {% for field in form %}
 
@@ -50,6 +58,39 @@ Cadastro Transporte
     </div>
 
     {% endfor %}
+
+    <div class="row">
+        <div class="col-5">
+            <table class="data-list-atlas">
+                <tr>
+                    <th>Matéria</th>
+                    <th>Notas</th>
+                    <th>Descrição</th>
+                    <th colspan="5"></th>
+                </tr>
+                {% for nota in notas %}
+                <tr>
+                    <td>{{ nota.id }} - {{ transporte.horario_de_atendimento }}</td>
+                    <td>{{ transporte.status }}</td>
+                    <td class="td-align-center"">
+                                            <!-- <a href=" {% url 'editar_transporte' transporte.id %}">Editar</a> -->
+                        Editar
+                    </td>
+                    <td class="td-align-center"">
+                        <a href=" {% url 'concelar_transporte' transporte.id %}">Cancelar</a>
+                        Cancelar
+                    </td>
+                    <td class="td-align-center">
+                                            <!-- <a href=" {% url 'finalizar_transporte' transporte.id %}">
+                        Finalizar</a> -->
+                        Finalizar
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-5">
             <input type="submit" value="Confirmar">

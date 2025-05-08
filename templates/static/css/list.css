@@ -12,6 +12,7 @@
   position: relative;
   border-radius: 5px;
   background-color: #131315;
+  color: #4070f4; /* Cor do texto my shadow */
   padding: 30px;
   width: 80%;
 }

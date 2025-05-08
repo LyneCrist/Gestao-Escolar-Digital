@@ -20,14 +20,14 @@ def listar(request):
     transportes = (
         Transporte.objects.annotate(
             nome=F("paciente__nome"),
-            data=F("data_de_transporte"),
-            horario=F("horario_de_atendimento"),
+            # data=F("data_de_transporte"),
+            # horario=F("horario_de_atendimento"),
         )
         .values(
             "pk",
             "nome",
-            "data",
-            "horario",
+            "data_criacao",
+            "data_alteracao",
             "status",
         )
         .order_by("-data_criacao")[:5]
@@ -66,6 +66,7 @@ def cadastrar(request, paciente_id: int):
     context["paciente_id"] = paciente.pk
     context["nome"] = paciente.nome
     context["cod_sus"] = paciente.cartao_sus
+    context["nascimento"] = paciente.data_de_nascimento
 
     if request.method == "POST":
 
@@ -116,8 +117,9 @@ def editar(request, id: int):
         if context["form"].is_valid():
 
             context["form"].save()
+            messages.success(request, "Notas atualizadas com sucesso")
 
-            return redirect("editar_condicao", transporte.pk)
+            return redirect("editar_transporte", transporte.pk)
 
         context["erros"] = context["form"].errors.as_data()
 
@@ -141,7 +143,7 @@ def cancelar(request, id):
 
         TransporteCore().validar_cancelamento(
             datetime.combine(
-                transporte.data_de_transporte, transporte.horario_de_atendimento
+                transporte.data_criacao , transporte.data_alteracao
             )
         )
 
