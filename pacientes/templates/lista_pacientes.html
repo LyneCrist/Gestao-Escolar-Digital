@@ -37,13 +37,20 @@ Lista Pacientes
                     <td class="td-align-center"">
                         <a href=" {% url 'editar_paciente' paciente.id %}">Editar</a>
                     </td>
+
+
                     <td class="td-align-center"">
                         <a href=" {% url 'excluir_paciente' paciente.id %}">Excluir</a>
                     </td>
-                    <td class="td-align-center"">
+
+
+
+                    {% comment %} <td class="td-align-center"">
                         <a href=" {% url 'criar_condicao' paciente.id %}">Inserir Condições</a>
-                    </td>
-                    <td class="td-align-center"">
+                    </td> {% endcomment %}
+
+
+                    <td class="td-align-center">
                         <a href=" {% url 'criar_transporte' paciente.id %}">Inserir Notas</a>
                     </td>
 

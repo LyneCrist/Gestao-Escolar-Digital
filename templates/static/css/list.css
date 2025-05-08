@@ -18,8 +18,8 @@
 
 body {
   background-color: #000000; /* Cor do fundo da página */
-  color: #999999; /* Cor do texto padrão */
-  font-family: Arial, sans-serif; /* Fonte padrão */
+  color: rgb(64, 112, 244); /* Cor do texto padrão */
+  font-family: Poppins, sans-serif; /* Fonte padrão */
 }
 
 .form_row_list h2 {
@@ -75,12 +75,12 @@ a.button-link {
   padding-bottom: 12px;
   text-align: left;
   background-color: #4070f4;
-  color: white;
+  color: #4070f4;
 }
 
 .data-list-atlas .td-align-center {
   text-align: center;
-  color: white;
+  color: #4070f4;
 }
 
 .td-align-center.status-cancelado {
