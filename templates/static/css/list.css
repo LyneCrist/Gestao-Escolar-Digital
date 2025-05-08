@@ -76,12 +76,12 @@ a.button-link {
   padding-bottom: 12px;
   text-align: left;
   background-color: #4070f4;
-  color: #4070f4;
+  color: #f2f2f2;
 }
 
 .data-list-atlas .td-align-center {
   text-align: center;
-  color: #4070f4;
+  color: #f2f2f2;
 }
 
 .td-align-center.status-cancelado {
