@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -8,16 +8,25 @@
     <style>
       /* Estilo para o container da logo */
       .logo-container {
-        display: flex;
+        display: right-flex; /* usa flexbox para o layout */
+        flex-direction: row; /* organiza os itens em linha */
+
         justify-content: center; /* centraliza horizontalmente */
         align-items: center; /* centraliza verticalmente */
-        height: 200px; /* altura do container */
+
+        position: fixed; /* fixa a logo na parte superior */
+        top: 1; /* alinha ao topo */
+        left: 10; /* alinha à esquerda */
+        right: 10; /* alinha à direita */
+        margin: auto; /* centraliza o container */
+
+        height: 0px; /* altura do container */
         background-color: #131315; /* só pra visualização */
       }
 
       .logo-container img {
-        opacity: 0.5; /* define a transparência (0 = invisível, 1 = opaco) */
-        width: 150px; /* ou ajuste o tamanho como quiser */
+        opacity: 1; /* define a transparência (0 = invisível, 1 = opaco) */
+        width: 140px; /* ou ajuste o tamanho como quiser */
       }
     </style>
 
@@ -67,8 +76,7 @@
     <div class="row-alert {{ message.tags }}">
       <strong>{{ message }}</strong>
     </div>
-    {% endfor %} {% comment %}
-    <img src="{% static 'img/image.png' %}" alt="" /> {% endcomment %}
+    {% endfor %}
     <div class="container">{% block content %} {% endblock content %}</div>
   </body>
 </html>
