@@ -5,6 +5,22 @@
   <meta name="keywords" content="" />
 
   <head>
+    <style>
+      /* Estilo para o container da logo */
+      .logo-container {
+        display: flex;
+        justify-content: center; /* centraliza horizontalmente */
+        align-items: center; /* centraliza verticalmente */
+        height: 200px; /* altura do container */
+        background-color: #131315; /* só pra visualização */
+      }
+
+      .logo-container img {
+        opacity: 0.5; /* define a transparência (0 = invisível, 1 = opaco) */
+        width: 150px; /* ou ajuste o tamanho como quiser */
+      }
+    </style>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} Master {% endblock title %}</title>
@@ -26,8 +42,9 @@
     </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
     </script>
+
     <form method="post" class="navbar-right">
       {% csrf_token %}
       <ul class="horizontal">
@@ -41,6 +58,10 @@
         </li>
       </ul>
     </form>
+
+    <div class="logo-container">
+      <img src="{% static 'img/ged.png' %}" alt="Logo do site" />
+    </div>
 
     {% for message in messages %}
     <div class="row-alert {{ message.tags }}">
