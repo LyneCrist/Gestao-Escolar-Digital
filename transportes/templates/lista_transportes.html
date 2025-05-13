@@ -19,13 +19,13 @@ Lista Alunos
                 <tr>
                     <th>Alunos</th>
                     <th>Notas</th>
-                    <th class="td-align-center">Materias</th>
+                    <th class="td-align-center">Matérias</th>
                     <th colspan="5"></th>
                 </tr>
                 {% for transporte in transportes %}
                 <tr>
                     <td>{{ transporte.nome }}</td>
-                    <td>{{ transporte.data|date:"d/m/Y" }} - {{ transporte.horario }} hrs</td>
+                    <td>{{ transporte.data|date:"d/m/Y" }} - {{ transporte.horario }} Nota</td>
 
                     <td class="td-align-center {{ transporte.status|set_status }}">{{ transporte.status }}</td>
 
