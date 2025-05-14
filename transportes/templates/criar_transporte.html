@@ -62,12 +62,12 @@ Cadastro Transporte
     <div class="row">
         <div class="col-5">
             <table class="data-list-atlas">
-                <tr>
+                {% comment %} <tr>
                     <th>Matéria</th>
                     <th>Notas</th>
                     <th>Descrição</th>
                     <th colspan="5"></th>
-                </tr>
+                </tr> {% endcomment %}
                 {% for nota in notas %}
                 <tr>
                     <td>{{ nota.id }} - {{ transporte.horario_de_atendimento }}</td>
