@@ -64,11 +64,11 @@ a.button-link {
 }
 
 .data-list-atlas tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #131315;
 }
 
 .data-list-atlas tr:hover {
-  background-color: #ddd;
+  background-color: #131315;
 }
 
 .data-list-atlas th {
