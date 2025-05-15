@@ -1,4 +1,6 @@
-from asyncio.windows_events import NULL
+#from asyncio.windows_events import NULL
+from django.db.models import Value
+NULL = Value(None)
 from cProfile import label
 from queue import Empty
 from django import forms
