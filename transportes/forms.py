@@ -83,7 +83,7 @@ class TransporteForm(forms.ModelForm, CommonsUtil):
     # )
 
     observacao = forms.CharField(
-        label="Observação",
+        label="Condições",
         required=False,
         widget=forms.Textarea(
             attrs={
@@ -204,7 +204,7 @@ class TransporteForm(forms.ModelForm, CommonsUtil):
         #     errors["destino"] = "Campo destino obrigatório"
 
         if not observacao:
-            errors["observacao"] = "Campo observação obrigatório"
+            errors["observacao"] = "Campo condições obrigatório"
 
         if observacao:
 
