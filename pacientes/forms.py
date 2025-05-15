@@ -4,7 +4,7 @@ from queue import Empty
 from django import forms
 
 import pacientes
-from .utils import AGENDAMENTO_FIXO_CHOICES, GENERO_CHOICES
+from .utils import GENERO_CHOICES
 from .models import Paciente
 from common.util import CommonsUtil
 
@@ -75,11 +75,11 @@ class PacienteForm(forms.ModelForm, CommonsUtil):
         ),
     )
 
-    agendamento_fixo = forms.ChoiceField(
-        required=False,
-        choices=AGENDAMENTO_FIXO_CHOICES,
-        widget=forms.RadioSelect(),
-    )
+    # agendamento_fixo = forms.ChoiceField(
+    #     required=False,
+    #     choices=AGENDAMENTO_FIXO_CHOICES,
+    #     widget=forms.RadioSelect(),
+    # )
 
     telefone = forms.CharField(
         label="Telefone",
@@ -167,7 +167,7 @@ class PacienteForm(forms.ModelForm, CommonsUtil):
 
         cartao_sus = self.cleaned_data.get("cartao_sus")
 
-        agendamento_fixo = self.cleaned_data.get("agendamento_fixo")
+        # agendamento_fixo = self.cleaned_data.get("agendamento_fixo")
 
         telefone = self.cleaned_data.get("telefone")
 
@@ -236,8 +236,8 @@ class PacienteForm(forms.ModelForm, CommonsUtil):
                 elif Paciente.objects.filter(cartao_sus=cartao_sus).exists():
                     errors["cartao_sus"] = "Já existe um mesmo Cartão RA cadastrado"
 
-        if not agendamento_fixo:
-            errors["agendamento_fixo"] = "Selecione uma opção para agendamento fixo"
+        # if not agendamento_fixo:
+        #     errors["agendamento_fixo"] = "Selecione uma opção para agendamento fixo"
 
         if not telefone:
             errors["telefone"] = "Campo telefone obrigatório"

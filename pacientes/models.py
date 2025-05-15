@@ -1,6 +1,6 @@
 from click import option
 from django.db import models
-from .utils import AGENDAMENTO_FIXO_CHOICES, GENERO_CHOICES
+from .utils import GENERO_CHOICES
 
 
 class Paciente(models.Model):
@@ -17,7 +17,7 @@ class Paciente(models.Model):
 
     cartao_sus = models.CharField(max_length=15, unique=True)
 
-    agendamento_fixo = models.IntegerField(choices=AGENDAMENTO_FIXO_CHOICES)
+    # agendamento_fixo = models.IntegerField(choices=AGENDAMENTO_FIXO_CHOICES)
 
     telefone = models.CharField(max_length=13)
 

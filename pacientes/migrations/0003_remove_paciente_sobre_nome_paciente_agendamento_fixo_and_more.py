@@ -14,11 +14,11 @@ class Migration(migrations.Migration):
             model_name="paciente",
             name="sobre_nome",
         ),
-        migrations.AddField(
-            model_name="paciente",
-            name="agendamento_fixo",
-            field=models.IntegerField(choices=[(1, "SIM"), (2, "Não")], default=1),
-        ),
+        # migrations.AddField(
+        #     model_name="paciente",
+        #     # name="agendamento_fixo",
+        #     field=models.IntegerField(choices=[(1, "SIM"), (2, "Não")], default=1),
+        # ),
         migrations.AlterField(
             model_name="paciente",
             name="complemento",

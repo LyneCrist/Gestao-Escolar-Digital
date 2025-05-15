@@ -171,11 +171,11 @@ def cancelar(request, id):
         return redirect("listar_transportes")
 
 
-def finalizar(request, id: int):
+# def finalizar(request, id: int):
 
-    # if request.method == "POST":
+#     # if request.method == "POST":
 
-    # transporte = Transporte.objects.get(id=id)
-    # transporte.delete()
+#     # transporte = Transporte.objects.get(id=id)
+#     # transporte.delete()
 
-    return redirect("finalizar_transporte")
+#     return redirect("finalizar_transporte")

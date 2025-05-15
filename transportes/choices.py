@@ -14,6 +14,6 @@ MOTIVO_CHOICES = (
 
 STATUS_CHOICES = ((1, "Agendado"), (2, "Cancelado"), (3, "Realizado"))
 
-AGENDAMENTO_FIXO_CHOICES = ((1, "Sim"), (2, "Não"))
+# AGENDAMENTO_FIXO_CHOICES = ((1, "Sim"), (2, "Não"))
 
 GENERO_CHOICES = ((1, "Feminino"), (2, "Masculino"), (3, "Outros"))

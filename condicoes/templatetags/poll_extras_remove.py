@@ -6,13 +6,13 @@ register = template.Library()
 
 @register.filter(name="is_fieldset")
 def is_fieldset(field: BoundField) -> bool:
-    return True if field in ["genero", "agendamento_fixo"] else False
+    return True if field in ["genero"] else False
 
 
 @register.filter(name="set_label")
 def set_label(field: BoundField) -> str:
 
-    fields = {"genero": "Gênero", "agendamento_fixo": "Agendamento Fixo"}
+    fields = {"genero": "Gênero"}
 
     return f"{fields[field.name]} *" if field.errors else fields[field.name]
 
@@ -25,7 +25,7 @@ def set_column_input(field: BoundField) -> str:
         "data_de_nascimento": "col-1",
         "genero": "col-5",
         "cartao_sus": "col-2",
-        "agendamento_fixo": "col-5",
+        # "agendamento_fixo": "col-5",
         "telefone": "col-2",
         "rua": "col-5",
         "numero": "col-2",

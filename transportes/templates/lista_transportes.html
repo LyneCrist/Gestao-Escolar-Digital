@@ -61,7 +61,7 @@ Lista Alunos
                             <div class="action-buttons">
                                 <a href="{% url 'editar_transporte' transporte.id %}" class="btn-action">Editar</a>
                                 <a href="{% url 'cancelar_transporte' transporte.id %}" class="btn-action">Cancelar</a>
-                                <a href="{% url 'finalizar_transporte' transporte.id %}" class="btn-action">Finalizar</a>
+                                {% comment %} <a href="{% url 'finalizar_transporte' transporte.id %}" class="btn-action">Finalizar</a> {% endcomment %}
                             </div>
                         {% else %}
                             &nbsp;
