@@ -44,7 +44,7 @@ git pull
 ```
 Atualizando estrutura da base de dados
 ```powershell
-python manage.py makemigrate
+python manage.py makemigration
 ```
 Seguido do comando
 ```powershell
