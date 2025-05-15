@@ -76,12 +76,12 @@ a.button-link {
   padding-bottom: 12px;
   text-align: left;
   background-color: #4070f4;
-  color: #f2f2f2;
+  color: #4070f4;
 }
 
 .data-list-atlas .td-align-center {
   text-align: center;
-  color: #f2f2f2;
+  color: #4070f4;
 }
 
 .td-align-center.status-cancelado {
@@ -100,4 +100,42 @@ a.button-link {
   color: silver;
   opacity: 0.9;
   pointer-events: none;
+}
+
+.td-align-center .td{
+  text-align: center;
+  color: #4070f4;
+  background-color: #131315;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-action {
+  padding: 4px 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9em;
+  border: 1px solid #ddd;
+}
+
+/* "editar" means "edit" in Portuguese */
+.btn-action[href*="editar"] {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+/* "excluir" means "delete" in Portuguese */
+.btn-action[href*="excluir"] {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* "criar" means "create" in Portuguese */
+.btn-action[href*="criar"] {
+  background-color: #e8f5e9;
+  color: #2e7d32;
 }

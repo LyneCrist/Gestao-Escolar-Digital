@@ -39,10 +39,15 @@ def set_column_input(field: BoundField) -> str:
 
 
 @register.filter(name="set_status")
-def set_status(status: str) -> str:
-
-    return {
-        "CANCELADO": "status-cancelado",
-        "AGENDADO": "status-agendado",
-        "FINALIZADO": "status-finalizado",
-    }[status.upper()]
+def set_status(status_value, status_choices=None):
+    # Mapeamento de status para classes CSS
+    status_classes = {
+        'Reprovado': 'status-reprovado',
+        'Aprovado': 'status-aprovado',
+        'Pendente': 'status-pendente',
+        # Adicione outros status conforme necessário
+        '': 'status-default'  # Fallback para status vazio
+    }
+    
+    # Verifica se o status existe no mapeamento
+    return status_classes.get(status_value, 'status-default')

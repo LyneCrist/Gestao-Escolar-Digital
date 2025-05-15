@@ -40,3 +40,9 @@ class Transporte(models.Model):
     class Meta:
         db_table = "transportes"
         ordering = ["-data_criacao"]
+
+    @property
+    def status_automatico(self):
+        if self.nota is not None and self.nota < 7:
+            return "Reprovado"
+        return self.status

@@ -26,6 +26,8 @@ def listar(request):
         .values(
             "pk",
             "nome",
+            "nota",
+            "materia",
             "data_criacao",
             "data_alteracao",
             "status",
@@ -34,11 +36,20 @@ def listar(request):
     )
 
     context = {
-        "transportes": map(
-            lambda transporte: filter_status_choices(transporte, STATUS_CHOICES),
-            transportes,
-        )
+        "transportes": [
+            {
+                **transporte,  # Mantém todos os campos originais
+                **filter_status_choices(transporte, STATUS_CHOICES)  # Adiciona o status processado
+            }
+            for transporte in transportes
+        ]
     }
+    # context = {
+    #     "transportes": map(
+    #         lambda transporte: filter_status_choices(transporte, STATUS_CHOICES),
+    #         transportes,
+    #     )
+    # }
 
     return render(request, "lista_transportes.html", context)
 

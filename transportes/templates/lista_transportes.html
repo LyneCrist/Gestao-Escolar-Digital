@@ -9,6 +9,29 @@ Lista Alunos
 {% endblock title %}
 {% block content %}
 <form action="" method="get" class="form_row_list">
+    <style>
+        /* CSS incorporado diretamente no template */
+        .td-align-center {
+            text-align: center;
+            color: #4070f4;
+            background-color: #131315;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .btn-action {
+            padding: 4px 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+        }
+        
+    </style>
 
     <div class="row">
         <div class="col-5">
@@ -17,32 +40,33 @@ Lista Alunos
         <div class="col-5">
             <table class="data-list-atlas">
                 <tr>
-                    <th>Alunos</th>
-                    <th>Notas</th>
-                    <th class="td-align-center">Matérias</th>
-                    <th colspan="5"></th>
+                    <th class="td-align-center">Alunos</th>
+                    <th class="td-align-center">Notas</th>
+                    <th class="td-align-center">Matéria</th>
+                    <th class="td-align-center">Ações</th>
+                    {% comment %} <th class="td-align-center">Status</th> {% endcomment %}
+                    {% comment %} <th colspan="1"></th> {% endcomment %}
                 </tr>
                 {% for transporte in transportes %}
                 <tr>
-                    <td>{{ transporte.nome }}</td>
-                    <td>{{ transporte.data|date:"d/m/Y" }} - {{ transporte.horario }} Nota</td>
+                    <td class="td-align-center">{{ transporte.nome }}</td>
+                    <td class="td-align-center">{{ transporte.nota }}  {{ transporte.horario }}</td>
+                    <td class="td-align-center">{{ transporte.materia }}</td>
 
-                    <td class="td-align-center {{ transporte.status|set_status }}">{{ transporte.status }}</td>
+                    {% comment %} <td class="td-align-center {{ transporte.status_automatico|set_status }}">{{ transporte.status_automatico }}</td> {% endcomment %}
 
-                    {% if transporte.status not in 'Cancelado,Realizado' %}
-
+                    <!-- Coluna de Ações Mesclada -->
                     <td class="td-align-center">
-                        <a href=" {% url 'editar_transporte' transporte.id %}">Editar</a>
+                        {% if transporte.status not in 'Cancelado,Realizado' %}
+                            <div class="action-buttons">
+                                <a href="{% url 'editar_transporte' transporte.id %}" class="btn-action">Editar</a>
+                                <a href="{% url 'cancelar_transporte' transporte.id %}" class="btn-action">Cancelar</a>
+                                <a href="{% url 'finalizar_transporte' transporte.id %}" class="btn-action">Finalizar</a>
+                            </div>
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
                     </td>
-                    <td class="td-align-center"">
-                        <a href=" {% url 'cancelar_transporte' transporte.id %}">Cancelar</a>
-                    </td>
-                    <td class="td-align-center"">
-                        <a href=" {% url 'finalizar_transporte' transporte.id %}">Finalizar</a>
-                    </td>
-                    {% else %}
-                    <td colspan="3" class="td-align-center">&nbsp;</td>
-                    {% endif %}
 
                 </tr>
                 {% endfor %}

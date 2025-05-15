@@ -9,6 +9,44 @@ Lista Pacientes
 {% endblock title %}
 {% block content %}
 <form action="" method="get" class="form_row_list">
+    <style>
+        /* CSS incorporado diretamente no template */
+        .td-align-center {
+            text-align: center;
+            color: #4070f4;
+            background-color: #131315;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .btn-action {
+            padding: 4px 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-action[href*="editar_paciente"] {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        
+        .btn-action[href*="excluir_paciente"] {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        
+        .btn-action[href*="criar_paciente"] {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+    </style>
 
     <div class="row">
 
@@ -23,35 +61,23 @@ Lista Pacientes
         <div class="col-5">
             <table class="data-list-atlas">
                 <tr>
-                    <th>Nome</th>
-                    <th>RA</th>
-                    <th colspan="5">Ações</th> 
+                    <th class="td-align-center">Nome</th>
+                    <th class="td-align-center">RA</th>
+                    <th class="td-align-center">Ações</th> 
                 </tr>
                 
                 {% for paciente in pacientes %}
                 <tr>
-                    <td>{{ paciente.nome }}</td>
-                    <td>{{ paciente.cartao_sus }}
+                    <td class="td-align-center">{{ paciente.nome }}</td>
+                    <td class="td-align-center">{{ paciente.cartao_sus }}
                     </td>
                  
-                    <td class="td-align-center"">
-                        <a href=" {% url 'editar_paciente' paciente.id %}">Editar</a>
-                    </td>
-
-
-                    <td class="td-align-center"">
-                        <a href=" {% url 'excluir_paciente' paciente.id %}">Excluir</a>
-                    </td>
-
-
-
-                    {% comment %} <td class="td-align-center"">
-                        <a href=" {% url 'criar_condicao' paciente.id %}">Inserir Condições</a>
-                    </td> {% endcomment %}
-
-
                     <td class="td-align-center">
-                        <a href=" {% url 'criar_transporte' paciente.id %}">Inserir Notas</a>
+                        <div class="action-buttons">
+                            <a href=" {% url 'editar_paciente' paciente.id %}" class="btn-action">Editar</a>
+                            <a href=" {% url 'excluir_paciente' paciente.id %}" class="btn-action">Excluir</a>
+                            <a href=" {% url 'criar_transporte' paciente.id %}" class="btn-action">Inserir Notas</a>
+                        </div>
                     </td>
 
                 </tr>
