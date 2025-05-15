@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+rm db.sqlite3
 # Comandos para preparar o Django
 python manage.py makemigrations
 python manage.py migrate

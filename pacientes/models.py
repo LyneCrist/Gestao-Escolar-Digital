@@ -17,8 +17,6 @@ class Paciente(models.Model):
 
     cartao_sus = models.CharField(max_length=15, unique=True)
 
-    # agendamento_fixo = models.IntegerField(choices=AGENDAMENTO_FIXO_CHOICES)
-
     telefone = models.CharField(max_length=13)
 
     rua = models.CharField(max_length=60)

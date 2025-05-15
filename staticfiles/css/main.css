@@ -1,0 +1,286 @@
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../webfonts/opensans-regular-webfont.woff2') format('woff2'),
+        url('../webfonts/opensans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.rightli {
+    float: right;
+} */
+
+
+/* .container {
+    margin: 1em auto;
+    text-align: center;
+width: 80%;
+height: 80vh;
+display: flex;
+
+
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
+*/
+/* 
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'open_sansregular', sans-serif;
+} */
+
+
+/* 
+.container {
+    width: 80%;
+    height: 80vh;
+    /* display: flex; */
+/* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212); 
+} 
+*/
+
+/* 
+body {
+    width: 100%;
+    height: 100vh;
+    /* display: flex; 
+justify-content: center;
+align-items: center;
+ /*background: #0c0ce94d; 
+}
+*/
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    min-width: 15px;
+    box-sizing: border-box;
+    font-family: 'open_sansregular', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: arial;
+    font-size: 16px;
+}
+
+.row {
+    position: relative;
+    /* border: 1px red solid; */
+    margin: 6px 0 16px 0;
+}
+
+.row.row-center {
+    text-align: center;
+}
+
+.col-1 {
+    width: 20%;
+    /* border: 1px black solid; */
+    margin: 1px 0 10px 0;
+}
+
+.col-2 {
+    /* border: 1px black solid; */
+    margin: 1px 0 10px 0;
+}
+
+.col-3 {
+    width: 60%;
+    /* border: 1px black solid; */
+    margin: 1px 0 10px 0;
+}
+
+.col-4 {
+    width: 80%;
+    /* border: 1px black solid; */
+    margin: 1px 0 10px 0;
+}
+
+.col-5 {
+.form_row input[type=submit] {
+            width: 100%;
+            background-color: #4070F4;
+            cursor: pointer;
+            padding: 13px 35px;
+            border-radius: 5px;
+            border: none;
+            color: white !important;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: 20px 0px 20px;
+        }
+    }
+
+.row-alert {
+    position: relative;
+    padding: 20px 0 20px 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.row-alert.success {
+    background: #04AA6D;
+    color: white;
+}
+
+.row-alert.error {
+    background: #f44336;
+    color: white;
+}
+
+.form.button {
+    width: 100%;
+    background-color: #4070F4;
+    cursor: pointer;
+    padding: 13px 35px;
+    border-radius: 5px;
+    border: none;
+    color: white !important;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 20px 0px 20px;
+}
+
+.button {
+    background-color: #4070F4;
+    cursor: pointer;
+    padding: 13px 35px;
+    border-radius: 5px;
+    border: none;
+    color: white !important;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px 0px 20px;
+}
+
+.button.button-link {
+    padding: 10px 25px;
+    font-size: 14px;
+    width: 10%;
+    background-color: #00a8e8;
+    color: white
+}
+
+.button.button-cancel {
+    width: 20%;
+    text-decoration: none;
+}
+
+.button.button-confirm {
+    width: 20%;
+    background-color: #f44336;
+    color: white
+}
+
+
+
+.absolute-align-left {
+    position: absolute;
+    float: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+@media screen and (min-width : 320px) {
+
+    class="container"
+        width: 80%;
+    }
+
+    .col-1 {
+        width: 60%;
+    }
+
+    .col-2 {
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width : 414px) {
+
+    .container {
+        width: min-width !important;
+    }
+
+    .form_row {
+        width: 70%;
+    }
+
+    .col-1 {
+        width: 40%;
+    }
+
+    .col-2 {
+        width: 100%;
+    }
+
+}
+
+
+@media screen and (min-width : 1000px) {
+
+    .form_row {
+        width: 65%;
+    }
+
+    .col-1 {
+        width: 20%;
+    }
+
+    .col-2 {
+        width: 40%;
+    }
+
+}
+
+@media screen and (min-width : 1024px) {
+
+    .form_row {
+        width: 50%;
+    }
+
+    .col-1 {
+        width: 20%;
+    }
+
+    .col-2 {
+        width: 40%;
+    }
+
+}
+
+@media screen and (min-width : 1520px) {
+    .form_row {
+        width: 40%;
+    }
+
+    .col-1 {
+        width: 20%;
+    }
+
+    .col-2 {
+        width: 40%;
+    }
+
+}
